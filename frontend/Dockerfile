@@ -1,11 +1,24 @@
 # syntax=docker/dockerfile:1
 
+# Comments are provided throughout this file to help you get started.
+# If you need more help, visit the Dockerfile reference guide at
+# https://docs.docker.com/go/dockerfile-reference/
+
+# Want to help us make this template better? Share your feedback here: https://forms.gle/ybq9Krt8jtBL3iCk7
+
+ARG NODE_VERSION=21.7.2
+
+################################################################################
+# Use node image for base image for all stages.
 # Create image based on the official Node image from dockerhub
-FROM node:lts-buster AS development
+# FROM node:lts-buster AS development
+FROM node:${NODE_VERSION}-alpine AS development
 
 # Create app directory
+# Set working directory for all build stages.
 WORKDIR /usr/src/app
 
+################################################################################
 # Copy dependency definitions
 COPY package.json /usr/src/app
 COPY package-lock.json /usr/src/app

@@ -30,7 +30,7 @@ services:
       - 3000
   mongo:
     restart: always
-    image: mongo:4.2.0
+    image: mongo:latest
     volumes:
       - ./data:/data/db
     networks:
