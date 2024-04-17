@@ -1,0 +1,111 @@
+/* Layout.module.css */
+.container {
+    display: flex;
+    height: 100vh;
+    /* h-screen */
+    flex-direction: row;
+    /* flex-col */
+    overflow: hidden;
+    /* md:overflow-hidden */
+}
+
+.content {
+    flex-grow: 1;
+    padding: 24px;
+    overflow-y: auto;
+    padding: 48px;
+}
+
+.sideNav {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding-top: 5vh;
+    padding-right: 5vh;
+}
+
+.sideNavMd {
+    width: 256px;
+    /* md:w-64 */
+}
+
+/* Add responsive styling for md breakpoint */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        /* md:flex-row */
+    }
+}
+
+/* Heading.module.css */
+.header1 {
+    margin: auto;
+    padding: 10vh 0 5vh;
+    text-align: center;
+}
+
+.heading {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    font-weight: 300;
+    font-size: 40px;
+    color: #080808;
+    transition: all 0.4s ease 0s;
+}
+
+.headingUpper {
+    display: block;
+    font-size: 0.5em;
+    line-height: 1.3;
+    color: white;
+    background: var(--header-rgba-glow);
+    min-height: 5vh;
+}
+
+.headingUnder {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    line-height: 1.3;
+    color: white;
+    background: var(--my-color);
+    min-height: 15vh;
+    padding-left: 2vw;
+}
+
+.headingEm {
+    font-style: normal;
+    font-weight: 600;
+}
+
+/* === HEADING STYLE #1 === */
+.one heading {
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+}
+
+.one heading::before {
+    width: 28px;
+    height: 5px;
+    display: block;
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    margin-left: -14px;
+    background-color: #b80000;
+}
+
+.one heading::after {
+    width: 100px;
+    height: 1px;
+    display: block;
+    content: "";
+    position: relative;
+    margin-top: 25px;
+    left: 50%;
+    margin-left: -50px;
+    background-color: #b80000;
+}
